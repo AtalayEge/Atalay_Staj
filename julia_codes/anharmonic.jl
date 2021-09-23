@@ -1,3 +1,6 @@
+
+# write a description for the code and date it.
+
 using QuantumOptics
 using PyPlot
 
@@ -28,6 +31,8 @@ T = [0:0.1:3;] #Time range
 tout0, psi_t0 = timeevolution.schroedinger(T, psi0, H_0);
 tout1, psi_t1 = timeevolution.schroedinger(T, psi0, H_1);
 
+# we can separate plotting and do it in another file.
+
 #Plotting points:
 x_points = samplepoints(pos_basis)
 
@@ -53,6 +58,9 @@ for i=1:size(T)[1]
     n = abs.(psi.data).^2
     plot(x_points, n, "r", alpha=0.9*(float(i)/length(T))^8+0.1)
 end
+
+# save figure in a dedicated figures directory
+# use an example figure and insert it in to the report.
 #Save the subplots:
 #Alternatively use command: gcf() to show
-savefig("anharmonic2.png")
+#savefig("anharmonic2.png")

@@ -1,0 +1,29 @@
+\providecommand{\noopsort}[1]{}\providecommand{\singleletter}[1]{#1}%
+\begin{thebibliography}{1}
+
+\bibitem{sakurai_modern_2010}
+J.~J. Sakurai and Jim~J. Napolitano.
+\newblock {\em Modern {Quantum} {Mechanics}}.
+\newblock Pearson, Boston, 2nd edition edition, July 2010.
+
+\bibitem{kramer_quantumopticsjl_2018}
+Sebastian Krämer, David Plankensteiner, Laurin Ostermann, and Helmut Ritsch.
+\newblock {QuantumOptics}.jl: {A} {Julia} framework for simulating open quantum
+  systems.
+\newblock {\em Computer Physics Communications}, 227:109--116, June 2018.
+
+\bibitem{baumgratz_quantifying_2014}
+T.~Baumgratz, M.~Cramer, and M.~B. Plenio.
+\newblock Quantifying {Coherence}.
+\newblock {\em Physical Review Letters}, 113(14):140401, September 2014.
+\newblock arXiv: 1311.0275 version: 3.
+
+\bibitem{verstraete_matrix_2008}
+F.~Verstraete, V.~Murg, and J.I. Cirac.
+\newblock Matrix product states, projected entangled pair states, and
+  variational renormalization group methods for quantum spin systems.
+\newblock {\em Advances in Physics}, 57(2):143--224, March 2008.
+\newblock Publisher: Taylor \& Francis \_eprint:
+  https://doi.org/10.1080/14789940801912366.
+
+\end{thebibliography}
