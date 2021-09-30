@@ -33,5 +33,6 @@ for i=1:size(T)[1]
     y[i] = expect(S_1z,psi) #Built in funtion
 end
 
-#Save the data in jld2 format:
-jldsave("C:/Users/asus/Desktop/staj2/staj_dosya/julia_codes/magnedata2.jld2";T,y,y2)
+# Save the data in jld2 format:
+# Use relative path
+jldsave("../data/magnedata2.jld2";T,y,y2)
