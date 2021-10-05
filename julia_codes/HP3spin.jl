@@ -45,6 +45,7 @@ end
 H_hp,largeID = One_dim_chain(Nbasis,S,N)
 
 #S1z opertor for H-P transformation by definiton
+b1 = embed(Nbasis,1,destroy(f_basis))
 S1z = S*largeID - dagger(b1)*b1
 
 #Create the initial state |010>
