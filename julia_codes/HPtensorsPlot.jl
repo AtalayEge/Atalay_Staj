@@ -6,7 +6,7 @@ using JLD2
 #Initialize the figure:
 figure(figsize=(8,5))
 title("Expectation Value Change for N=100 H-P Chain")
-ylabel(L"\langle n_c \rangle",fontsize=15)
+ylabel(L"\langle S_c^z \rangle",fontsize=15)
 xlabel("t",fontsize=15)
 
 #Open the data:

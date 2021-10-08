@@ -15,6 +15,7 @@ function One_dim_spin_wave(N,cutoff,tau,ttotal)
     Jz = -1
     s = siteinds("Boson",N)
     S = 1/2
+    ID = op("Id",s[1])
 
 
     gates = ITensor[]
@@ -35,7 +36,7 @@ function One_dim_spin_wave(N,cutoff,tau,ttotal)
     append!(gates,reverse(gates))
 
     #Initial state as |010001..> randomly
-    psi = productMPS(s, n -> isodd(n) ? "0" : "1")
+    psi = productMPS(s, n -> n==50 ? "0" : "1")
 
     c = div(N,2)
 
@@ -47,7 +48,7 @@ function One_dim_spin_wave(N,cutoff,tau,ttotal)
         psi = apply(gates, psi; cutoff=cutoff)
         t1[step] = t
         t += tau
-        n_c = expect(psi,"n";site_range=c:c)
+        n_c = S*expect(psi,"Id";site_range=c:c)-expect(psi,"n";site_range=c:c)
         y1[step] = n_c
     end
     return t1,y1
