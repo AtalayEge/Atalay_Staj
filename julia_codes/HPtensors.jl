@@ -42,6 +42,8 @@ function One_dim_spin_wave(N,cutoff,tau,ttotal)
 
     t1 = zeros(Nsteps)
     y1 = zeros(Nsteps)
+    y2 = zeros(Nsteps)
+    y3 = zeros(Nsteps)
     t = 0
     #Calculate the expectation values for n_c at given time
     for step=1:Nsteps
@@ -49,10 +51,16 @@ function One_dim_spin_wave(N,cutoff,tau,ttotal)
         t1[step] = t
         t += tau
         n_c = S*expect(psi,"Id";site_range=c:c)-expect(psi,"n";site_range=c:c)
+        n_c1 = S*expect(psi,"Id";site_range=c+1:c+1)-
+                 expect(psi,"n";site_range=c+1:c+1)
+        n_c2 = S*expect(psi,"Id";site_range=c:c)-
+                 expect(psi,"n";site_range=c-1:c-1)
         y1[step] = n_c
+        y2[step] = n_c1
+        y3[step] = n_c2
     end
-    return t1,y1
+    return t1,y1,y2,y3
 end
 
-t1,y1 = One_dim_spin_wave(N,cutoff,tau,ttotal)
-jldsave("../data/HPtensors.jld2";t1,y1)
+t1,y1,y2,y3 = One_dim_spin_wave(N,cutoff,tau,ttotal)
+jldsave("../data/HPtensors.jld2";t1,y1,y2,y3)
